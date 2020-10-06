@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">
+            Contacts
+        </h1>
+        <input type="text" id="filterInput" placeholder="search names">
+        <ul class="collection with-header" id="names">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Adam</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Abe</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Ava</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Are</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        /* Get input element */
+        const filterNames = () =>{
+            /* Getting the value of input */
+            let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        /* get lis */
+        let li = document.querySelectorAll("li.collection-item");
+        for(let i =0;i<li.length;i++){
+            /* we use 0 to directly reach a element */
+            let a = li[i].getElementsByTagName('a')[0].innerHTML.toUpperCase().indexOf(filterValue)
+            console.log(a)
+            /* if innerHTML value which is text is equal to filterValue which is input value */
+            if(a >-1){
+                /*  */
+                li[i].style.display = "";
+            }else{
+                li[i].style.display = "none";
+            }
+            }
+        }
+        let filterInput = document.getElementById("filterInput");
+        /* Add event listener */
+        filterInput.addEventListener("keyup",filterNames);
+    </script>
+</body>
+</html>

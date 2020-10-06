@@ -1,0 +1,202 @@
+/* * {
+    margin: 0;
+    padding: 0;
+}
+ */
+
+
+/* EFFECTS ALL THE BODY ELEMENT */
+
+body {
+    background-color: #f4f4f4;
+    color: #555555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    /* font does the same */
+    font: normal 15px Arial, Helvetica, sans-serif;
+    /* user experinece designed */
+    line-height: 1.5em;
+    margin: 5;
+}
+
+
+/* CLASSICAL FONT FOR EACH PARAGRAPH */
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.clr{
+    clear:both;
+}
+/* BOX-1 STYLING */
+
+.box-1 {
+    background-color: #333;
+    color: #fff;
+    border-right: 5px red solid;
+    border-left: 5px red solid;
+    border-top: 5px red solid;
+    border-bottom: 5px red solid;
+    /* or */
+    border: 5px red solid;
+    /* set all the border 3px */
+    border-width: 3px;
+    /* helps to change specific part */
+    border-bottom-width: 7px;
+    border-top-style: dashed;
+    border: 3px red solid;
+    /* padding effect the content */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* same */
+    padding: 20px;
+    margin: 10px 10px;
+}
+
+
+/* BOX-1 HEADER STYLING */
+
+.box-1 h1 {
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.box-2 {
+    border: 3px dotted #ccc;
+    padding: 10px 20px;
+    margin: 10px 10px;
+}
+
+
+/* SAME AS ABOVE CATEGORIES STYLING */
+
+.categories {
+    border: 1px #ccc solid;
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+
+.categories h2 {
+    text-align: center;
+}
+
+.categories ul {
+    font-family: Arial;
+    padding: 0px;
+    padding-left: 25px;
+    list-style: square;
+    /* for deleting list view in the beginning */
+    list-style: none;
+}
+
+
+/* adds a dotted borders to li's of list */
+
+.categories li {
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border-bottom: dotted 1px black;
+    list-style-image: url('https://img.icons8.com/all/15/checkmark.png');
+}
+
+
+/* STYLING VIEW OF LINKS */
+
+a {
+    margin: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: bisque;
+}
+
+a:active {
+    color: purple;
+}
+
+a:visited {
+    color: red;
+}
+
+.my-form{
+    padding:20px;
+    border: 2px dotted #000;
+    margin:10px;
+    border-radius: 10px;
+}
+
+.my-form form-group{
+    padding-bottom:10px;
+}
+
+.my-form label{
+    /* sets them bottom by bottom as a layer */
+    display:block
+}
+
+.my-form input[type="text"],.my-form textarea{
+    padding: 0px;
+    width:60%
+}
+.my-form input[type="submit"]{
+    background-color:rgb(122, 122, 10);
+    color:black;
+    padding:3px;
+    margin-top: 10px;
+    
+
+}
+
+#block{
+    margin:0px;
+    border: 1px solid #ccc;
+    float:left;
+    width:33.3%;
+    box-sizing:border-box;
+    padding:20px;
+    
+}
+
+#main-block{
+    float:left;
+    width:70%;
+    padding:15px;
+    box-sizing:border-box;
+}
+#sidebar{
+    float: right;
+    width: 30%;
+    background-color:#333;
+    color:#fff;
+    padding:15px;
+    box-sizing:border-box;
+
+}
+
+.p-box{
+    width:800px;
+    height:500px;
+    border:1px solid #000;
+    margin-top:30px;
+}
+
+
+#curvy1{
+    float:left;
+}
+div #curvy2{
+    float:right;
+    margin:20px;
+}

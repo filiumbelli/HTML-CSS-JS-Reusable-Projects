@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">Click for Posts</button>
+    <div id="output"></div>
+
+    <form id="addPost">
+        <div>
+            <input type="text" id="title">
+        </div>
+        <div>
+            <textarea name="body" id="body" cols="30" rows="10">
+            </textarea>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+
+        const getPosts = () => {
+            fetch('users.json')
+                .then((posts) => posts.json())
+                .then(posts =>{
+                    let output= "<h3>Posts</h3>"
+                    posts.forEach((post)=>
+                    output +=`
+                    <ul>
+                    <li>Title: ${post.title}</li>
+                    <li>Id: ${post.id}</li>
+                    <li>userId: ${post.userId}</li>
+                    </ul>`)
+                    document.getElementById('output').innerHTML = output;
+                })
+        }
+        const postAll = (e) =>{
+            e.preventDefault();
+            let title = document.getElementById('title').value;
+            let body = document.getElementById('body').value;
+            fetch('users.json',{
+                method:"POST",
+                headers:{
+                    "Accept":"application/json, text/plain, */*",
+                    "Content-type":"application/json"
+                },
+                body:JSON.stringify({title,body})
+            })
+            .then(res=>res.json())
+            .then(data=>console.log(data))
+        }
+        document.getElementById('addPost').addEventListener('submit', postAll);
+        document.getElementById('button').addEventListener('click',getPosts);
+    </script>
+</body>
+
+</html>

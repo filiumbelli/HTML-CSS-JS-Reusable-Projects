@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <button id="getText">Get Text</button>
+    <button id="getUsers">Get Users</button>
+    <div id="output"></div>
+
+
+    <script>
+        const getUsers = () => {
+            fetch('users.json')
+                .then(res => res.json())
+                .then((data) => {
+                    let htmlelement = "<h2>Users</h2>"
+                    data.forEach(function (user) {
+                        htmlelement += `
+                            <ul>
+                                <li>${user.name}</li>
+                                <li>${user.id}</li>
+                            </ul>
+                            `
+                    })
+                    document.getElementById('output').innerHTML = htmlelement;
+                })
+        }
+        const getText = () => {
+            fetch('sample.txt')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.getElementById('output').innerHTML = data;
+                })
+                .catch(error => console.log(error))
+        };
+        document.getElementById('getText').addEventListener('click', getText)
+        document.getElementById('getUsers').addEventListener('click', getUsers);
+
+    </script>
+</body>
+
+</html>
